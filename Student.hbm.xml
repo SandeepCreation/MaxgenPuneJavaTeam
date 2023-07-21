@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 6 Aug, 2021 3:02:29 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.pojo.Student" table="student" catalog="hibernatepractice121">
+        <id name="sid" type="java.lang.Integer">
+            <column name="sid" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="collage" class="com.pojo.Collage" fetch="select">
+            <column name="cid" />
+        </many-to-one>
+        <property name="sname" type="string">
+            <column name="sname" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>
